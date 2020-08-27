@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main()
+{
+	ll b,p,m;
+	while(cin>>b>>p>>m)
+	{
+		ll res=1;
+		b=b%m;
+		while(p>0)
+		{
+			b=b%m;
+			if(p&1)
+			res=(res*b)%m;
+			b=(b*b)%m;
+			p=p>>1;
+		}
+		cout<<res<<endl;
+	}
+}
